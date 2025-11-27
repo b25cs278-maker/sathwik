@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: location_tasks_db_dev
+    environment:
+      POSTGRES_DB: location_based_tasks
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+    networks:
+      - location_tasks_dev_network
+    restart: unless-stopped
+
+  # Redis (Optional - for development)
+  redis:
+    image: redis:7-alpine
+    container_name: location_tasks_redis_dev
+    ports:
+      - "6379:6379"
+    networks:
+      - location_tasks_dev_network
+    restart: unless-stopped
+
+volumes:
+  postgres_dev_data:
+    driver: local
+
+networks:
+  location_tasks_dev_network:
+    driver: bridge

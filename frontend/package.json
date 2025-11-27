@@ -1,0 +1,28 @@
+{
+  "name": "task-hub-simple",
+  "version": "1.0.0",
+  "description": "Simple location-based task management",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.6.0",
+    "react-hook-form": "^7.43.0",
+    "react-toastify": "^9.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.15",
+    "typescript": "^5.2.2",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "14.0.0",
+    "prettier": "^3.1.0"
+  }
+}
